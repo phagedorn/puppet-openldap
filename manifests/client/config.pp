@@ -38,7 +38,7 @@ define ldap::client::config (
   }
 
   case $::operatingsystem {
-    debian,ubuntu: {
+    debian,ubuntu,Debian,Ubuntu: {
       file { '/etc/ldap.conf':
         ensure  => file,
         content => template('ldap/client/common/nss_pam_ldap.conf.erb'),
